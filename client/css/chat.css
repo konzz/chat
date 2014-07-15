@@ -1,0 +1,30 @@
+#users {
+	border: 1px solid gray;
+	border-radius: 5px;
+	width: 60px;
+	height: 300px;
+	float: left;
+}
+
+#messages {
+	border: 1px solid gray;
+	border-radius: 5px;
+	width: 600px;
+	height: 300px;	
+	float: left;
+}
+
+form {
+	clear: both;
+}
+
+#text_input {
+	width: 400px;
+	height: 26px;
+	padding: 2px;
+	margin-left: 120px;
+}
+
+.user {
+	font-weight: bold;
+}

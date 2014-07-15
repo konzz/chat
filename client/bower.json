@@ -1,0 +1,10 @@
+{
+  "name": "chat",
+  "version": "0.0.1",
+  "dependencies": {
+    "underscore": "latest",
+    "angular": "1.2.1",
+    "angular-route": "1.2.1",
+    "bootstrap": "3.2.0"
+  }
+}
