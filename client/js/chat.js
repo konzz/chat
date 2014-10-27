@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('chat', ['ngRoute'])
+angular.module('chat', [])
 .controller('chat', function($scope, server, $anchorScroll, $location){
 
     $scope.connected = false;
@@ -39,15 +39,5 @@ angular.module('chat', ['ngRoute'])
         $scope.users.splice($scope.users.indexOf(nickname), 1);
         $scope.messages.push({nickname: 'system', message: nickname + ' disconnected'});
         $scope.$digest();
-    });
-})
-.factory('server', function(){
-    return io(document.domain+':8080');
-})
-.config(function($routeProvider){
-    $routeProvider
-    .when('/', {
-        templateUrl: 'views/chat.html',
-        controller: 'chat'
     });
 });

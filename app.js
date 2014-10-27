@@ -8,21 +8,21 @@ var io = socketio.listen(app.listen(8080));
 
 var users = [];
 
-io.sockets.on('connection', function(client){
-    console.log('Client connected...');
+io.sockets.on('connection', function(connection){
+    console.log('user connected...');
     var nickname;
 
-    client.on('connection_request', function(_nickname){
+    connection.on('connection_request', function(_nickname){
         nickname = _nickname;
         users.push(nickname);
         
-        client.emit('connection_accepted', users);
+        connection.emit('connection_accepted', users);
         
-        client.broadcast.emit('user_connected', nickname);
-        console.log('client joined with nickname', nickname);
+        connection.broadcast.emit('user_connected', nickname);
+        console.log('user joined with nickname', nickname);
     });
 
-    client.on('disconnect', function(){
+    connection.on('disconnect', function(){
         console.log(nickname + ' disconnected...');
         if(nickname){
             io.emit('disconnect', nickname);
@@ -30,7 +30,7 @@ io.sockets.on('connection', function(client){
         }
     });
 
-    client.on('message', function(message){
+    connection.on('message', function(message){
         console.log( nickname + ' says ' + message);
         io.emit('message', nickname, message);
     });
