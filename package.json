@@ -1,11 +1,15 @@
 {
-	"name": "MyChat",
-	"version": "0.1.1",
-	"description": "a simple chat",
+	"name": "ng-chat.io",
+	"version": "0.0.1",
+	"description": "AngularJS + Socket.io + Node.js chat",
 	"dependencies": {
 		"socket.io": "1.0.6",
 		"express": "4.4.5",
 		"underscore": "1.6.0",
-        "bower": "1.3.7"
+    "bower": "1.3.7"
 	}
+	},
+    "scripts": {
+    "postinstall": "bower install"
+  }
 }
