@@ -1,4 +1,4 @@
 angular.module('chat')
-.factory('server', function(){
+.factory('connection', function(){
     return io(document.domain+':8080');
 })
